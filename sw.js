@@ -1,4 +1,4 @@
-const CACHE = 'italia26-v2';
+const CACHE = 'italia26-v3';
 const CORE = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', e => {
