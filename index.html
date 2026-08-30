@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itália 2026 · Nathaly & Júnior · Painel Final</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E3A53">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Itália 26">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tirreno:#0E3A53;      /* azul profundo do mar */
+  --tirreno-2:#16506F;
+  --marfim:#F2F6F7;       /* fundo geral, azul-névoa */
+  --card:#FFFFFF;
+  --limone:#F2C14E;       /* limoncello de Sorrento */
+  --cipreste:#3E6B4F;     /* verde toscano — ok/pronto */
+  --alerta:#C0392B;       /* vermelho pompeiano — atenção */
+  --tinta:#122B3A;
+  --cinza:#5E7382;
+  --linha:#D8E2E6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;background:var(--marfim);color:var(--tinta);line-height:1.55}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* ---------- HERO ---------- */
+header{background:var(--tirreno);color:#fff;padding:44px 0 0;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:auto 0 0 0;height:34px;background:
+  radial-gradient(circle at 6px -8px, transparent 14px, var(--marfim) 15px);
+  background-size:28px 34px;background-repeat:repeat-x}
+.eyebrow{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--limone)}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,7vw,64px);line-height:1.02;margin:10px 0 6px}
+.sub{color:#BFD4DF;font-size:16px;max-width:520px}
+.status-pill{display:inline-flex;align-items:center;gap:8px;background:var(--cipreste);color:#fff;
+  font-weight:700;font-size:14px;padding:8px 16px;border-radius:999px;margin:18px 0 8px}
+.status-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#B7E4C7}
+.count{display:flex;gap:26px;flex-wrap:wrap;margin:22px 0 46px}
+.count div{min-width:70px}
+.count b{font-family:'Fraunces',serif;font-size:34px;font-weight:700;display:block;line-height:1}
+.count span{font-size:12px;color:#9FB9C7;text-transform:uppercase;letter-spacing:.08em}
+
+/* ---------- KPIs ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:-6px 0 34px}
+.kpi{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:16px 18px}
+.kpi b{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--tirreno);display:block}
+.kpi span{font-size:12.5px;color:var(--cinza)}
+.kpi.ok b{color:var(--cipreste)}
+
+section{margin:34px 0}
+h2{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--tirreno);margin-bottom:4px}
+.lead{color:var(--cinza);font-size:14.5px;margin-bottom:16px}
+
+/* ---------- ALERTAS ---------- */
+.alerts{display:grid;gap:12px}
+.alert{background:#FDF3F1;border:1px solid #EBC4BC;border-left:6px solid var(--alerta);border-radius:12px;padding:16px 18px}
+.alert h3{font-size:16px;color:var(--alerta);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.alert .dia{font-family:'Spline Sans Mono',monospace;font-size:12px;background:var(--alerta);color:#fff;
+  padding:2px 8px;border-radius:6px;white-space:nowrap}
+.alert p{font-size:14px;margin-top:6px}
+.alert .planb{margin-top:8px;font-size:13.5px;background:#fff;border:1px dashed #E0A79C;border-radius:8px;
+  padding:8px 12px}
+.alert .planb b{color:var(--cipreste)}
+
+/* ---------- TIMELINE ---------- */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;
+  background:repeating-linear-gradient(to bottom,var(--tirreno-2) 0 10px,transparent 10px 16px);border-radius:2px}
+details.dia-card{background:var(--card);border:1px solid var(--linha);border-radius:14px;margin-bottom:10px;position:relative}
+details.dia-card::before{content:"";position:absolute;left:-24px;top:22px;width:13px;height:13px;border-radius:50%;
+  background:var(--limone);border:3px solid var(--tirreno)}
+details.dia-card[data-cidade]::after{}
+summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+summary::-webkit-details-marker{display:none}
+summary .data{font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:13px;color:var(--tirreno);
+  background:var(--marfim);padding:4px 9px;border-radius:7px;white-space:nowrap}
+summary .cidade{font-weight:700;font-size:16px}
+summary .n{margin-left:auto;font-size:12.5px;color:var(--cinza);white-space:nowrap}
+summary .ok{color:var(--cipreste);font-weight:700}
+.dia-body{padding:0 18px 16px;font-size:14px;color:#33505F;border-top:1px solid var(--linha);padding-top:12px}
+.dia-body .rota{margin-bottom:8px}
+.dia-body .ajuste{background:#FFF8E6;border:1px solid #EAD9A8;border-radius:8px;padding:8px 12px;font-size:13.5px;margin-top:8px}
+.dia-body .ajuste b{color:#8A6D1B}
+.tagfix{font-size:11px;font-weight:700;color:#8A6D1B;background:var(--limone);padding:2px 8px;border-radius:6px}
+
+/* ---------- PENDÊNCIAS ---------- */
+.todo{display:grid;gap:10px}
+.todo .item{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.todo .q{font-family:'Spline Sans Mono',monospace;font-size:12px;font-weight:600;color:#fff;background:var(--tirreno-2);
+  padding:3px 9px;border-radius:6px;white-space:nowrap;margin-top:2px}
+.todo p{font-size:14px}
+.todo small{color:var(--cinza)}
+
+/* ---------- LINK ---------- */
+.cta{display:block;text-align:center;background:var(--tirreno);color:#fff;text-decoration:none;font-weight:700;
+  border-radius:14px;padding:18px;font-size:16px;margin:8px 0 12px;transition:transform .15s ease}
+.cta:hover{transform:translateY(-2px)}
+.cta small{display:block;font-weight:400;font-size:12.5px;color:#9FB9C7;margin-top:3px}
+
+footer{text-align:center;color:var(--cinza);font-size:12.5px;padding:26px 0 40px}
+footer b{color:var(--tirreno)}
+@media (prefers-reduced-motion:reduce){.cta{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Nathaly &amp; Júnior · Lua de mel na bota</div>
+    <h1>Itália 2026</h1>
+    <p class="sub">04 → 20 de setembro · Veneza · Verona · Florença · Toscana · Sorrento · Capri · Costa Amalfitana · Nápoles · Roma</p>
+    <div class="status-pill">Roteiro 100% lançado no Wanderlog</div>
+    <div class="count" id="count">
+      <div><b id="cd-d">–</b><span>dias p/ embarque</span></div>
+      <div><b>17</b><span>dias de viagem</span></div>
+      <div><b>~110</b><span>paradas no app</span></div>
+      <div><b>19/19</b><span>ingressos</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="kpis" style="margin-top:28px">
+    <div class="kpi ok"><b>✓</b><span>Wanderlog completo — endereços, horários e rotas dia a dia</span></div>
+    <div class="kpi ok"><b>✓</b><span>PDF impresso na ordem cronológica (guia de rua)</span></div>
+    <div class="kpi ok"><b>✓</b><span>3 restaurantes com alerta já substituídos no app</span></div>
+    <div class="kpi"><b style="color:#8A6D1B">8</b><span>dias com ajuste de ordem por arrastar (opcional)</span></div>
+  </div>
+
+  <section id="alertas">
+    <h2>✅ Alertas resolvidos — restaurantes trocados no app</h2>
+    <p class="lead">Os três almoços com problema de horário foram substituídos direto no Wanderlog e no roteiro. Os novos abrem confirmadamente no dia da visita — nenhuma pendência gastronômica restante.</p>
+    <div class="alerts">
+      <div class="alert" style="background:#F1F7F3;border-color:#BFDCC9;border-left-color:var(--cipreste)">
+        <h3 style="color:var(--cipreste)">Verona → Osteria Sottoriva <span class="dia" style="background:var(--cipreste)">DOM 06/09 · almoço</span></h3>
+        <p>Substituiu o Al Pompiere (fechava aos domingos). Clássico verônese sob as arcadas do rio Adige — <b>Via Sottoriva 9 · aberto dom. 11:30–21:30</b> · +39 045 801 4323.</p>
+      </div>
+      <div class="alert" style="background:#F1F7F3;border-color:#BFDCC9;border-left-color:var(--cipreste)">
+        <h3 style="color:var(--cipreste)">Roma Antiga → La Carbonara <span class="dia" style="background:var(--cipreste)">TER 15/09 · almoço</span></h3>
+        <p>Substituiu a Taverna dei Fori Imperiali (fechada temporariamente). Osteria de 1906 em Monti, famosa pela pasta alla carbonara — <b>Via Panisperna 214 · aberta ter. 12:30–14:30</b>.</p>
+      </div>
+      <div class="alert" style="background:#F1F7F3;border-color:#BFDCC9;border-left-color:var(--cipreste)">
+        <h3 style="color:var(--cipreste)">Vaticano → Tre Pupazzi <span class="dia" style="background:var(--cipreste)">QUI 17/09 · almoço</span></h3>
+        <p>Substituiu o Arlù (que passou a constar como fechado permanentemente). Cozinha romana em Borgo Pio, a 5 min da Basílica — <b>Borgo Pio 183 · aberto qui. 12:00–15:30</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dias">
+    <h2>Os 17 dias no app</h2>
+    <p class="lead">Toque num dia para ver a rota e, quando houver, o ajuste de ordem sugerido (segurar o item ⣿ no Wanderlog e soltar na posição). Dias com <b class="ok">✓</b> já estão na sequência exata do roteiro.</p>
+    <div class="tl">
+
+      <details class="dia-card"><summary><span class="data">SEX 04</span><span class="cidade">Veneza — chegada</span><span class="n">5 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Aeroporto Marco Polo → check-in → Ponte de Rialto → Piazza San Marco iluminada → gôndola → jantar Osteria Ae Sconte.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> arrastar <b>Ponte de Rialto</b> para antes da Piazza San Marco.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SÁB 05</span><span class="cidade">Veneza + Burano</span><span class="n">7 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Palácio Ducal (9h) → Campanário → Dal Moro's (almoço) → Basílica (13h30) → vaporetto p/ Burano → aperitivo em Cannaregio → jantar Trattoria Pontini.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> arrastar <b>Dal Moro's</b> para antes da Basílica.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">DOM 06</span><span class="cidade">Verona (bate-volta)</span><span class="n">14 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Trem de Santa Lucia → Arena por fora + Piazza Bra → Casa de Julieta (ingresso ✓) → Erbe → Torre dei Lamberti → Signori → almoço Osteria Sottoriva → Castelvecchio → Teatro Romano → Ponte Pietra → Castel San Pietro (pôr do sol) → jantar Osteria Ponte Pietra.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>P.za Bra</b> após a Arena · <b>Teatro Romano</b> após o Castelvecchio.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SEG 07</span><span class="cidade">Verona → Florença</span><span class="n">9 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Manhã livre (San Zeno, Via Mazzini, Flego) → trem Porta Nuova → Firenze SMN → Piazza del Duomo à noite → Prosciutteria → jantar Osteria Santo Spirito.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">TER 08</span><span class="cidade">Florença</span><span class="n">11 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Uffizi (8h15, ingresso ✓) → Signoria → Mercato Centrale (almoço) → Cúpula Brunelleschi (14h15 ✓) → Campanário de Giotto → Batistério → gelato Perché No! → Ponte Vecchio → P.le Michelangelo (pôr do sol) → jantar La Buchetta.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>Signoria</b> e <b>Mercato Centrale</b> logo após o Uffizi · <b>Ponte Vecchio</b> e <b>P.le Michelangelo</b> para o fim.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">QUA 09</span><span class="cidade">Toscana de carro</span><span class="n">6 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Siena (parking S. Caterina → Catedral 10h ✓ → Piazza del Campo) → San Gimignano (13h15) → degustação Tenuta Torciano (15h ✓) → volta e devolução do carro.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">QUI 10</span><span class="cidade">Florença → Sorrento</span><span class="n">7 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Trem p/ Napoli Centrale → Circumvesuviana/estação Sorrento → Piazza Tasso e centro → limoncello I Giardini di Cataldo → Villa Comunale (pôr do sol) → jantar O'Parrucchiano La Favorita.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SEX 11</span><span class="cidade">Capri</span><span class="n">8 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Balsa do porto (voucher ✓) → Marina Grande → Gruta Azul (barco) → Piazzetta → Jardins de Augusto → almoço Villa Verde → cadeirinha Monte Solaro → volta → jantar Bagni Delfino.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SÁB 12</span><span class="cidade">Pompeia + Vesúvio</span><span class="n">3 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Parque Arqueológico (ingresso ✓, chegar cedo) → almoço Caupona → Vesúvio Gran Cono 15h (ingresso ✓ — não espera!).</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">DOM 13</span><span class="cidade">Costa Amalfitana</span><span class="n">8 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Ferry 8h50 p/ Positano (Spiaggia Grande + Igreja S. M. Assunta) → ferry Amalfi → almoço Da Gemma → Catedral → ônibus Ravello (Villa Rufolo → Villa Cimbrone/Terraço do Infinito) → volta 16h40 → jantar Terrazza Bosquet.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>S. M. Assunta</b> após Positano · <b>Da Gemma</b> antes da Catedral · <b>Villa Rufolo</b> antes da Cimbrone.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SEG 14</span><span class="cidade">Nápoles → Roma</span><span class="n">5 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Trem cedo → guarda-volumes Napoli Centrale → pizza L'Antica da Michele (12h) → Spaccanapoli → Via dei Presepi (San Gregorio Armeno) → Duomo → trem p/ Roma.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">TER 15</span><span class="cidade">Roma Antiga</span><span class="n">9 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Coliseu (ingresso ✓) → Fórum Romano → Palatino → almoço La Carbonara (Monti) → Campidoglio → terraço do Altare della Patria → Via dei Fori Imperiali → aperitivo em Monti → jantar Ai Tre Scalini.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>Taverna</b> após o Palatino · <b>Via dei Fori Imperiali</b> antes de Monti · <b>Ai Tre Scalini</b> por último.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">QUA 16</span><span class="cidade">Centro Histórico</span><span class="n">11 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Fontana di Trevi VAZIA às 7h30 → café Sant'Eustachio → Panteão 9h (bilheteria no local!) → S. M. sopra Minerva → Piazza Navona → almoço Mimì e Cocò → Campo de' Fiori → Largo Argentina → Sant'Ignazio → Via del Corso → jantar Armando al Pantheon.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>Trevi → 1º lugar</b> · <b>Sant'Eustachio → 2º</b> · <b>Navona</b> após a Minerva · <b>Armando</b> por último.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">QUI 17</span><span class="cidade">Vaticano</span><span class="n">7 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Museus Vaticanos + Sistina (ingresso ✓) → Basílica de São Pedro + cúpula → almoço Tre Pupazzi (Borgo Pio) → Castel Sant'Angelo → Ponte Sant'Angelo → tarde/noite em Trastevere → jantar Tonnarello.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>Trastevere</b> após a Ponte Sant'Angelo.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SEX 18</span><span class="cidade">Via Appia + Aventino</span><span class="n">6 paradas <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Catacumbas de São Calisto → Via Appia Antica (bike) → Jardim das Laranjeiras → Buraco da Fechadura de Malta → Santa Sabina → jantar no Testaccio (Mercado).</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">SÁB 19</span><span class="cidade">Borghese + compras</span><span class="n">7 paradas</span></summary>
+        <div class="dia-body"><div class="rota">Piazza del Popolo (9h30) → compras Via Condotti/Corso → Escadaria da Piazza di Spagna (15h30) → Terraço do Pincio → Villa Borghese → Galleria Borghese (17h45, ingresso ✓) → jantar de despedida Roscioli.</div>
+        <div class="ajuste"><span class="tagfix">AJUSTE</span> <b>Popolo → 1º</b> · <b>Condotti → 2º</b> · <b>Galleria Borghese → penúltimo</b>.</div></div>
+      </details>
+
+      <details class="dia-card"><summary><span class="data">DOM 20</span><span class="cidade">Volta ao Brasil</span><span class="n">Fiumicino <b class="ok">✓</b></span></summary>
+        <div class="dia-body"><div class="rota">Leonardo Express da Termini → Aeroporto de Fiumicino → arrivederci, Italia! 🇮🇹</div></div>
+      </details>
+
+    </div>
+  </section>
+
+  <section id="pendencias">
+    <h2>Pendências vivas</h2>
+    <p class="lead">O que ainda depende de vocês antes/durante a viagem.</p>
+    <div class="todo">
+      <div class="item"><span class="q">01/09 · 15/09</span><p><b>Panteão — ingresso na bilheteria dia 16/09.</b> Não tem venda antecipada garantida: checkpoints combinados dia 01 e 15 para revisar; no dia, comprar direto no local às 9h.<br><small>Chegando às 7h30 na Trevi, vocês estarão entre os primeiros da fila do Panteão.</small></p></div>
+      <div class="item" style="opacity:.55"><span class="q" style="background:var(--cipreste)">FEITO ✓</span><p><b>Reembolso de €24 (Siena)</b> — recebido em 28/08.</p></div>
+      <div class="item" style="opacity:.55"><span class="q" style="background:var(--cipreste)">FEITO ✓</span><p><b>3 almoços com alerta</b> — substituídos no app e no roteiro (Sottoriva · La Carbonara · Tre Pupazzi).</p></div>
+      <div class="item"><span class="q">Opcional</span><p><b>Ajustar a ordem nos 8 dias marcados</b> (segurar ⣿ e arrastar no app). O PDF já está na sequência certa e serve de guia mesmo sem esse ajuste.</p></div>
+    </div>
+  </section>
+
+  <a class="cta" href="https://wanderlog.com/plan/gbdtaidfdnmivxbw/viagem-para-italy" target="_blank" rel="noopener">
+    Abrir a viagem no Wanderlog →
+    <small>17 dias · ~110 paradas · rotas, horários e mapas offline no celular</small>
+  </a>
+
+  <footer>Painel final · atualizado em <b>28/08/2026 (v2 — restaurantes substituídos)</b> · roteiro consolidado + Wanderlog completo<br>Buon viaggio, Nathaly &amp; Júnior! 🍋</footer>
+</div>
+
+<script>
+(function(){
+  var alvo=new Date(2026,8,4,0,0,0); // 04/09/2026
+  var d=Math.max(0,Math.ceil((alvo-new Date())/86400000));
+  document.getElementById('cd-d').textContent=d;
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
+</script>
+</body>
+</html>
